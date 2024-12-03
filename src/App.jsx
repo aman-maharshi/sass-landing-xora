@@ -3,7 +3,7 @@ import Header from './sections/Header'
 
 const App = () => {
   return (
-    <main>
+    <main className='overflow-hidden'>
       <Header />
     </main>
   )

@@ -7,6 +7,10 @@
 - React.js
 - Tailwind CSS
 
+## <a name="libraries">✎ Additional Libraries Used</a>
+
+- React Scroll
+
 ## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
