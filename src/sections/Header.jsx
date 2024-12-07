@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import { Link as LinkReactScroll } from "react-scroll"
+import { Link as LinkScroll } from "react-scroll"
 import clsx from 'clsx'
 
 const NavLink = ({ title }) => (
-  <LinkReactScroll
+  <LinkScroll
     className='base-bold uppercase cursor-pointer transition-colors duration-500 hover:text-p1 max-lg:my-4 max-lg:h5'
   >
     {title}
-  </LinkReactScroll>
+  </LinkScroll>
 )
 
 const Header = () => {
@@ -30,11 +30,11 @@ const Header = () => {
                   <NavLink title='pricing' />
                 </li>
                 <li className='nav-logo'>
-                  <LinkReactScroll
+                  <LinkScroll
                     className='max-lg:hidden'
                   >
                     <img src="/images/xora.svg" width={160} height={55} alt="logo" />
-                  </LinkReactScroll>
+                  </LinkScroll>
                 </li>
                 <li className='nav-li'>
                   <NavLink title='faq' />
