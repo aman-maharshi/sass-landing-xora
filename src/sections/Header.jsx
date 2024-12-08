@@ -14,7 +14,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className='fixed left-0 top-0 w-full z-50 py-10'>
+    <header className='fixed left-0 top-0 w-full z-50 py-10 border border-amber-300'>
       <div className='container flex h-14 items-center max-lg:px-5'>
         <a href="#" className='lg:hidden flex-1 cursor-pointer z-2'>
           <img src="/images/xora.svg" width={115} height={55} alt="logo" />
