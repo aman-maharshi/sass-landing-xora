@@ -1,9 +1,11 @@
-import React from 'react'
+import { useState } from "react"
 import clsx from "clsx"
 import Button from "../components/Button.jsx"
 import CountUp from "react-countup"
 
-const PricingCard = ({ index, plan, monthly }) => {
+const PricingCard = ({ index, plan }) => {
+  const [monthly, setMonthly] = useState(false)
+
   return (
     <div
       key={plan.id}
@@ -68,11 +70,33 @@ const PricingCard = ({ index, plan, monthly }) => {
 
       <div
         className={clsx(
-          "body-1 relative z-2 mb-10 w-full border-b-s2 pb-9 text-center text-p4",
+          "body-1 relative z-2 w-full border-b-s2 pb-9 text-center text-p4",
           index === 1 && "border-b",
         )}
       >
         {plan.caption}
+      </div>
+
+      <div className="relative my-6 z-4 mx-auto flex w-[275px] max-md:w-[250px] rounded-3xl border-[3px] border-s4/25 bg-s1/50 p-2 backdrop-blur-[6px]">
+        <button
+          className={clsx("pricing-head_btn", monthly && "text-p4")}
+          onClick={() => setMonthly(true)}
+        >
+          Monthly
+        </button>
+        <button
+          className={clsx("pricing-head_btn", !monthly && "text-p4")}
+          onClick={() => setMonthly(false)}
+        >
+          Annual
+        </button>
+
+        <div
+          className={clsx(
+            "g4 rounded-14 before:h-100 pricing-head_btn_before absolute left-2 top-2 h-[calc(100%-16px)] w-[calc(50%-8px)] overflow-hidden shadow-400 transition-transform duration-500",
+            !monthly && "translate-x-full",
+          )}
+        />
       </div>
 
       <ul className="mx-auto space-y-4 xl:px-7">
