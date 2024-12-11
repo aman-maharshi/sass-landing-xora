@@ -9,27 +9,20 @@ const Header = () => {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 32)
+    }
+    
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 640)
     }
 
-    handleResize()
+    window.addEventListener("scroll", handleScroll)
     window.addEventListener("resize", handleResize)
 
     return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [])
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setHasScrolled(window.scrollY > 32)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
       window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("resize", handleResize)
     }
   }, [])
 
