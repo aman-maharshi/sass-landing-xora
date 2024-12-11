@@ -7,7 +7,7 @@
 - React.js
 - Tailwind CSS
 
-## <a name="libraries">✎ Additional Libraries Used</a>
+## <a name="libraries">🔗 Additional Libraries Used</a>
 
 - React Scroll
 - React Countup
