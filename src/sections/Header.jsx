@@ -6,6 +6,20 @@ import clsx from 'clsx'
 const Header = () => {
   const [hasScrolled, setHasScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 640)
+    }
+
+    handleResize()
+    window.addEventListener("resize", handleResize)
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,11 +33,11 @@ const Header = () => {
     }
   }, [])
 
-  const NavLink = ({ title }) => (
+  const NavLink = ({ title, offset }) => (
     <LinkScroll
       onClick={() => setIsOpen(false)}
       to={title}
-      offset={-100}
+      offset={offset || -100}
       spy
       smooth
       activeClass="nav-active"
@@ -82,7 +96,7 @@ const Header = () => {
                 <li className="nav-li">
                   <NavLink title="faq" />
                   <div className="dot" />
-                  <NavLink title="download" />
+                  <NavLink title="download" offset={isMobile ? -350 : -100} />
                 </li>
               </ul>
             </nav>
