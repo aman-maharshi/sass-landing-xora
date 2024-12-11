@@ -10,6 +10,8 @@
 ## <a name="libraries">✎ Additional Libraries Used</a>
 
 - React Scroll
+- React Countup
+- React Slidedown
 
 ## React + Vite
 
